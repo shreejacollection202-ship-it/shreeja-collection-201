@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SHREEJA COLLECTION 202</title>
+<meta name="description" content="SHREEJA COLLECTION 202 — stylish jewellery, watches and accessories.">
+<style>
+*{box-sizing:border-box}:root{--gold:#b98a28;--dark:#211b16;--cream:#fffaf3;--text:#302820}
+body{margin:0;background:var(--cream);color:var(--text);font-family:Arial,sans-serif}
+header{position:sticky;top:0;z-index:20;background:#fffdf9ee;backdrop-filter:blur(12px);border-bottom:1px solid #eadcc8}
+nav{max-width:1200px;margin:auto;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font:700 21px Georgia,serif;letter-spacing:1.5px}.logo i{display:block;font:10px Arial;letter-spacing:3px;color:var(--gold);font-style:normal}
+nav button,.search button{border:1px solid var(--gold);background:white;border-radius:25px;padding:10px 15px;font-weight:bold;cursor:pointer}
+.hero{background:linear-gradient(135deg,#fffaf3,#f1e3cf);text-align:center;padding:58px 18px 50px}
+.hero h1{font:700 clamp(40px,8vw,78px) Georgia,serif;margin:0 0 8px}.hero p{color:#756b62;max-width:650px;margin:10px auto 24px;line-height:1.6}
+.hero .btn{display:inline-block;background:var(--dark);color:#fff;padding:13px 23px;border-radius:28px;text-decoration:none;font-weight:bold}
+.tools{max-width:1200px;margin:auto;padding:22px 18px 10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center}
+.search{display:flex;gap:7px;flex:1;max-width:450px}.search input{width:100%;border:1px solid #ddcfbd;border-radius:25px;padding:11px 15px;outline:none}
+.filters{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}.filters button{border:1px solid #ddcfbd;background:#fff;padding:9px 14px;border-radius:22px;cursor:pointer}.filters .on{background:var(--dark);color:white}
+.grid{max-width:1200px;margin:auto;padding:18px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.product{background:#fff;border:1px solid #eee1d0;border-radius:18px;overflow:hidden;box-shadow:0 5px 22px #4b32100c}
+.photo{position:relative;background:#f7eee3}.photo img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}.photo span{position:absolute;left:9px;top:9px;background:#fffdf0dd;color:#7b5b19;font-size:10px;padding:6px 8px;border-radius:15px}
+.info{padding:13px}.info small{color:var(--gold);text-transform:uppercase;letter-spacing:1px;font-size:10px}h3{font:600 17px Georgia,serif;min-height:40px;margin:7px 0}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.row b{font-size:18px}.row button{border:0;background:var(--dark);color:#fff;border-radius:9px;padding:10px 12px;font-weight:bold;cursor:pointer}
+footer{margin-top:45px;background:var(--dark);color:#fff;text-align:center;padding:35px 18px;line-height:1.7}footer strong{color:#f1c76a}
+.drawer{position:fixed;z-index:100;right:-440px;top:0;width:min(430px,94vw);height:100vh;background:#fff;box-shadow:-10px 0 35px #0003;padding:20px;transition:.25s;overflow:auto}.drawer.open{right:0}
+.close{float:right;border:0;border-radius:50%;width:34px;height:34px;cursor:pointer}.drawer h2{font:700 27px Georgia,serif}
+.cartitem{border-bottom:1px solid #eee;padding:13px 0;display:flex;justify-content:space-between;gap:10px}.cartitem button{border:0;background:#f4e9db;padding:6px 9px;border-radius:8px}
+.total{font-size:21px;font-weight:bold;margin:22px 0}.wa{display:block;text-align:center;text-decoration:none;background:#158344;color:white;padding:14px;border-radius:11px;font-weight:bold}
+.pay{margin-top:10px;display:block;text-align:center;text-decoration:none;background:var(--gold);color:white;padding:13px;border-radius:11px;font-weight:bold}
+.note{font-size:12px;color:#777;line-height:1.5;margin-top:14px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:650px){.grid{grid-template-columns:repeat(2,1fr);gap:11px;padding:11px}.info{padding:10px}h3{font-size:14px}.row{align-items:stretch;flex-direction:column}.row button{width:100%}}
+</style></head><body>
+<header><nav><div class="logo">SHREEJA COLLECTION <i>202 • PREMIUM JEWELLERY</i></div>
+<button onclick="openCart()">🛒 Cart (<span id="count">0</span>)</button></nav></header>
+
+<section class="hero"><h1>SHREEJA COLLECTION 202</h1>
+<p>Elegant jewellery, stylish designs and beautiful accessories — shop your favourite collection online.</p>
+<a class="btn" href="#shop">Shop Now</a></section>
+
+<div class="tools">
+<div class="search"><input id="search" placeholder="Search jewellery..." oninput="render()"><button onclick="document.getElementById('search').value='';render()">Clear</button></div>
+<div class="filters">
+<button class="on" onclick="setCat('All',this)">All</button><button onclick="setCat('Earrings',this)">Earrings</button>
+<button onclick="setCat('Necklaces',this)">Necklaces</button><button onclick="setCat('Rings',this)">Rings</button><button onclick="setCat('Watches',this)">Watches</button>
+</div></div>
+
+<main id="shop" class="grid"><article class="product" data-cat="Earrings" data-name="star stud earrings">
+<div class="photo"><img src="images/product-1.jpg" alt="Star Stud Earrings" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Earrings</small><h3>Star Stud Earrings</h3>
+<div class="row"><b>₹399</b><button onclick="add(0)">Add to Cart</button></div></div></article><article class="product" data-cat="Earrings" data-name="square crystal studs">
+<div class="photo"><img src="images/product-2.png" alt="Square Crystal Studs" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Earrings</small><h3>Square Crystal Studs</h3>
+<div class="row"><b>₹399</b><button onclick="add(1)">Add to Cart</button></div></div></article><article class="product" data-cat="Earrings" data-name="leaf crystal earrings">
+<div class="photo"><img src="images/product-3.png" alt="Leaf Crystal Earrings" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Earrings</small><h3>Leaf Crystal Earrings</h3>
+<div class="row"><b>₹499</b><button onclick="add(2)">Add to Cart</button></div></div></article><article class="product" data-cat="Earrings" data-name="floral crystal earrings">
+<div class="photo"><img src="images/product-4.png" alt="Floral Crystal Earrings" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Earrings</small><h3>Floral Crystal Earrings</h3>
+<div class="row"><b>₹449</b><button onclick="add(3)">Add to Cart</button></div></div></article><article class="product" data-cat="Earrings" data-name="butterfly stud earrings">
+<div class="photo"><img src="images/product-5.png" alt="Butterfly Stud Earrings" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Earrings</small><h3>Butterfly Stud Earrings</h3>
+<div class="row"><b>₹499</b><button onclick="add(4)">Add to Cart</button></div></div></article><article class="product" data-cat="Earrings" data-name="classic stone studs">
+<div class="photo"><img src="images/product-6.png" alt="Classic Stone Studs" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Earrings</small><h3>Classic Stone Studs</h3>
+<div class="row"><b>₹399</b><button onclick="add(5)">Add to Cart</button></div></div></article><article class="product" data-cat="Watches" data-name="bvlgari style bracelet watch">
+<div class="photo"><img src="images/product-7.jpg" alt="Bvlgari Style Bracelet Watch" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Watches</small><h3>Bvlgari Style Bracelet Watch</h3>
+<div class="row"><b>₹999</b><button onclick="add(6)">Add to Cart</button></div></div></article><article class="product" data-cat="Necklaces" data-name="ruby pendant necklace">
+<div class="photo"><img src="images/product-8.png" alt="Ruby Pendant Necklace" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Necklaces</small><h3>Ruby Pendant Necklace</h3>
+<div class="row"><b>₹799</b><button onclick="add(7)">Add to Cart</button></div></div></article><article class="product" data-cat="Necklaces" data-name="circle crystal pendant">
+<div class="photo"><img src="images/product-9.png" alt="Circle Crystal Pendant" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Necklaces</small><h3>Circle Crystal Pendant</h3>
+<div class="row"><b>₹699</b><button onclick="add(8)">Add to Cart</button></div></div></article><article class="product" data-cat="Necklaces" data-name="butterfly pendant necklace">
+<div class="photo"><img src="images/product-10.png" alt="Butterfly Pendant Necklace" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Necklaces</small><h3>Butterfly Pendant Necklace</h3>
+<div class="row"><b>₹699</b><button onclick="add(9)">Add to Cart</button></div></div></article><article class="product" data-cat="Necklaces" data-name="four-leaf pendant necklace">
+<div class="photo"><img src="images/product-11.png" alt="Four-Leaf Pendant Necklace" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Necklaces</small><h3>Four-Leaf Pendant Necklace</h3>
+<div class="row"><b>₹699</b><button onclick="add(10)">Add to Cart</button></div></div></article><article class="product" data-cat="Necklaces" data-name="love charm necklace">
+<div class="photo"><img src="images/product-12.png" alt="Love Charm Necklace" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Necklaces</small><h3>Love Charm Necklace</h3>
+<div class="row"><b>₹599</b><button onclick="add(11)">Add to Cart</button></div></div></article><article class="product" data-cat="Rings" data-name="wave crystal ring">
+<div class="photo"><img src="images/product-13.png" alt="Wave Crystal Ring" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Rings</small><h3>Wave Crystal Ring</h3>
+<div class="row"><b>₹499</b><button onclick="add(12)">Add to Cart</button></div></div></article><article class="product" data-cat="Rings" data-name="bow crystal ring">
+<div class="photo"><img src="images/product-14.png" alt="Bow Crystal Ring" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Rings</small><h3>Bow Crystal Ring</h3>
+<div class="row"><b>₹499</b><button onclick="add(13)">Add to Cart</button></div></div></article><article class="product" data-cat="Rings" data-name="classic crystal ring">
+<div class="photo"><img src="images/product-15.png" alt="Classic Crystal Ring" loading="lazy"><span>Anti Tarnish</span></div>
+<div class="info"><small>Rings</small><h3>Classic Crystal Ring</h3>
+<div class="row"><b>₹499</b><button onclick="add(14)">Add to Cart</button></div></div></article></main>
+
+<footer><strong>SHREEJA COLLECTION 202</strong><br>Premium Jewellery • Stylish Designs • Easy Ordering<br>
+Instagram • WhatsApp • Online Shopping</footer>
+
+<aside id="drawer" class="drawer"><button class="close" onclick="closeCart()">×</button>
+<h2>Your Cart</h2><div id="items"></div><div class="total">Total: ₹<span id="total">0</span></div>
+<a id="wa" class="wa" target="_blank">📲 Order on WhatsApp</a>
+<a class="pay" href="javascript:void(0)" onclick="alert('Add your UPI ID in the SETTINGS section of index.html to activate online payment.')">💳 Pay Online / UPI</a>
+<div class="note">अपना WhatsApp नंबर, UPI ID और Instagram link नीचे SETTINGS में बदलें।</div>
+</aside>
+
+<script>
+const products = [{"name": "Star Stud Earrings", "cat": "Earrings", "price": 399, "img": "product-1.jpg"}, {"name": "Square Crystal Studs", "cat": "Earrings", "price": 399, "img": "product-2.png"}, {"name": "Leaf Crystal Earrings", "cat": "Earrings", "price": 499, "img": "product-3.png"}, {"name": "Floral Crystal Earrings", "cat": "Earrings", "price": 449, "img": "product-4.png"}, {"name": "Butterfly Stud Earrings", "cat": "Earrings", "price": 499, "img": "product-5.png"}, {"name": "Classic Stone Studs", "cat": "Earrings", "price": 399, "img": "product-6.png"}, {"name": "Bvlgari Style Bracelet Watch", "cat": "Watches", "price": 999, "img": "product-7.jpg"}, {"name": "Ruby Pendant Necklace", "cat": "Necklaces", "price": 799, "img": "product-8.png"}, {"name": "Circle Crystal Pendant", "cat": "Necklaces", "price": 699, "img": "product-9.png"}, {"name": "Butterfly Pendant Necklace", "cat": "Necklaces", "price": 699, "img": "product-10.png"}, {"name": "Four-Leaf Pendant Necklace", "cat": "Necklaces", "price": 699, "img": "product-11.png"}, {"name": "Love Charm Necklace", "cat": "Necklaces", "price": 599, "img": "product-12.png"}, {"name": "Wave Crystal Ring", "cat": "Rings", "price": 499, "img": "product-13.png"}, {"name": "Bow Crystal Ring", "cat": "Rings", "price": 499, "img": "product-14.png"}, {"name": "Classic Crystal Ring", "cat": "Rings", "price": 499, "img": "product-15.png"}];
+let category="All", cart=[];
+const SETTINGS={
+  whatsapp:"91XXXXXXXXXX",
+  upi:"YOURUPI@bank",
+  instagram:"https://instagram.com/shreejacollection202"
+};
+function setCat(c,b){category=c;document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');render()}
+function render(){
+ const q=document.getElementById('search').value.toLowerCase().trim();
+ document.querySelectorAll('.product').forEach((el,i)=>{
+   const p=products[i];
+   el.style.display=((category==="All"||p.cat===category)&&(!q||p.name.toLowerCase().includes(q)))?"":"none";
+ });
+}
+function add(i){let x=cart.find(a=>a.i===i);x?x.qty++:cart.push({i,qty:1});draw();openCart()}
+function remove(i){cart.splice(i,1);draw()}
+function draw(){
+ let total=0,count=0;
+ document.getElementById('items').innerHTML=cart.length?cart.map((x,n)=>{
+   let p=products[x.i],sub=p.price*x.qty;total+=sub;count+=x.qty;
+   return `<div class="cartitem"><div><b>${p.name}</b><br>₹${p.price} × ${x.qty} = ₹${sub}</div><button onclick="remove(${n})">Remove</button></div>`;
+ }).join(''):'<p>Your cart is empty.</p>';
+ document.getElementById('count').textContent=count;
+ document.getElementById('total').textContent=total;
+ let lines=cart.map(x=>`${products[x.i].name} x ${x.qty} - ₹${products[x.i].price*x.qty}`).join('%0A');
+ document.getElementById('wa').href=`https://wa.me/${SETTINGS.whatsapp}?text=Hello%20SHREEJA%20COLLECTION%20202,%20I%20want%20to%20order:%0A${lines}%0A%0ATotal:%20₹${total}`;
+}
+function openCart(){document.getElementById('drawer').classList.add('open')}
+function closeCart(){document.getElementById('drawer').classList.remove('open')}
+draw();
+</script></body></html>
